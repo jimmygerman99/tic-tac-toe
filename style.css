@@ -1,0 +1,131 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+h1 {
+    color: white;
+}
+.game {
+    display: flex;
+    flex-direction: row;       /* ✅ board + chatbot side by side */
+    justify-content: center;   /* ✅ center both horizontally */
+    align-items: flex-start;   /* ✅ align top edges */
+    gap: 100px;                /* ✅ space between board & chatbot */
+    width: 100%;
+    margin: 0 auto;            /* ✅ center container */
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;    /* ✅ stack board + form */
+    align-items: center;       /* ✅ center form horizontally */
+    gap: 30px;                 /* ✅ space between board & form */
+    width: auto;
+  }
+  
+.board { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* equal columns */
+    grid-template-rows: repeat(3, 1fr);    /* equal rows */
+    gap: 5px;
+    margin: 20px auto;
+    height: 800px;   /* total board height */
+    width: 800px;    /* total board width */
+    border: 2px solid white;
+  }
+  .names {
+    display: flex;
+    flex-direction: column;    /* ✅ h3 stays on top */
+    align-items: center;       /* ✅ center everything */
+    gap: 15px;                 /* ✅ space between header & row */
+  }
+  
+  .names h3 {
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .names .form-row {
+    display: flex;
+    flex-direction: row;       /* ✅ horizontal layout */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;                 /* ✅ space between items */
+  }
+  .names label {
+    color: #00ffff;
+    font-size: 1.1rem;
+  }
+  
+  .names .name {
+    width: 150px;
+    background: #111;
+    color: white;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .names .name:focus {
+    border-color: #00ff99;    /* green glow on focus */
+    box-shadow: 0 0 10px #00ff99;
+  }
+  
+  .play {
+    background: #00ffff;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+  }
+  .play:hover {
+    background: #00ff99;       /* hover → neon green */
+    box-shadow: 0 0 10px #00ff99;
+  }
+  .cell {
+    background: #111;
+    border: 2px solid #00ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* ✅ make text big */
+    font-size: 6rem;      /* was likely ~2rem before */
+    font-weight: bold;    /* make X/O bolder */
+    line-height: 1;       /* keeps them vertically centered */
+    color: white;         /* default text color */
+    cursor: pointer;
+  }
+.chatBot {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    width: 500px;
+    height: 800px;
+    border: 2px solid green;
+    align-items: center;
+    gap: 10px;
+}
+.chat {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 2px solid black;
+    width: 100%;
+    height: 90%;          /* so it fills most of the chatbot */
+    padding: 10px;
+    overflow-y: auto;     /* ✅ scroll if many messages */
+    color: white;
+  }
+  
+  .chat p {
+    margin: 4px 0;
+    font-size: 1rem;
+  }
